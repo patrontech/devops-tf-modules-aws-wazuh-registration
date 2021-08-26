@@ -3,8 +3,9 @@
 data "template_file" "userdata_snippet" {
   template = file("${path.module}/bash.tpl")
   vars = {
-    wazuh_manager_ip        = var.wazuh_manager_ip
-    wazuh_manager_password  = var.wazuh_manager_password 
+    wazuh_manager_ip       = var.wazuh_manager_ip
+    wazuh_manager_password = var.wazuh_manager_password
+    wazuh_agent_groups     = var.wazuh_agent_groups
   }
 }
 
