@@ -7,8 +7,10 @@ WAZUH_AGENT_GROUPS="${wazuh_agent_groups}"
 
 if [ -z "$WAZUH_MANAGER_PASSWORD" ]
 then
+    echo "Attempting wazuh authentication without password"
     /var/ossec/bin/agent-auth -m $WAZUH_MANAGER_IP -G $WAZUH_AGENT_GROUPS
 else
+    echo "Attempting wazuh authentication with password"
     /var/ossec/bin/agent-auth -m $WAZUH_MANAGER_IP -P $WAZUH_MANAGER_PASSWORD -G $WAZUH_AGENT_GROUPS
 fi
 systemctl restart wazuh-agent
