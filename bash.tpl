@@ -13,4 +13,5 @@ else
     echo "Wazuh password set - attempting wazuh authentication with password"
     /var/ossec/bin/agent-auth -m $WAZUH_MANAGER_IP -P $WAZUH_MANAGER_PASSWORD -G $WAZUH_AGENT_GROUPS
 fi
+systemctl enable wazuh-agent
 systemctl restart wazuh-agent
