@@ -1,4 +1,4 @@
-## The following file is responsible for generating and outputing the user-data which can be used to register an instance
+## The following file is responsible for generating and outputting the user-data which can be used to register an instance
 ## with wazuh. It should be concatenated with whatever other userdata scripts we have
 locals {
   userdata_snippet = templatefile("${path.module}/bash.tpl", {
